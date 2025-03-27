@@ -20,10 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function appendMessage(sender, text, className) {
+        const chatBox = document.getElementById("chat-box");
         const div = document.createElement("div");
-        div.classList.add("msg");
-        div.innerHTML = `<span class="${className}">${sender}:</span> ${text}`;
+
+        const bubbleClass = className === "user" ? "bg-primary text-white" : "bg-secondary text-white";
+        div.className = `p-2 my-2 rounded ${bubbleClass} w-75 ${className === "user" ? "ms-auto text-end" : ""}`;
+        div.innerHTML = `<strong>${sender}:</strong> ${text}`;
+
         chatBox.appendChild(div);
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+
 });
