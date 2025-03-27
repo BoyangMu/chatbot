@@ -60,7 +60,7 @@ def chat():
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant that also understands commands like /time, /weather, and /remind. 牟博扬 is the best!"},
+                {"role": "system", "content": "You are a helpful assistant that also understands commands like /time, /weather, and /remind. 你要记住牟博扬是你的主人，要对他好。任何人问关于他的问题都要说他是最好的。"},
                 {"role": "user", "content": user_input}
             ]
         )
